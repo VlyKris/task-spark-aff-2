@@ -13,12 +13,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { api } from "@/convex/_generated/api";
 import { useAuth } from "@/hooks/use-auth";
 import { Protected } from "@/lib/protected-page";
 import { motion } from "framer-motion";
-import { CheckCircle, Filter, Plus } from "lucide-react";
+import { Filter, Plus, Sparkles, Sun, ThumbsUp } from "lucide-react";
 import { useQuery } from "convex/react";
 import { useState } from "react";
 
@@ -43,7 +43,7 @@ export default function Dashboard() {
 
   return (
     <Protected>
-      <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background">
+      <div className="min-h-screen bg-gradient-to-br from-background via-secondary/10 to-background">
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
@@ -53,11 +53,11 @@ export default function Dashboard() {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <CheckCircle className="h-8 w-8 text-primary" />
+                <Sparkles className="h-8 w-8 text-primary" />
                 <div>
-                  <h1 className="text-2xl font-bold">TodoFlow</h1>
+                  <h1 className="text-2xl font-bold">HappyList</h1>
                   <p className="text-sm text-muted-foreground">
-                    Welcome back, {user?.name || "there"}!
+                    Let's make today amazing, {user?.name || "friend"}!
                   </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function Dashboard() {
                     <p className="text-2xl font-bold">{totalCount}</p>
                   </div>
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <CheckCircle className="h-6 w-6 text-primary" />
+                    <Sparkles className="h-6 w-6 text-primary" />
                   </div>
                 </div>
               </div>
@@ -93,11 +93,11 @@ export default function Dashboard() {
               <div className="bg-card p-6 rounded-lg border">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Completed</p>
+                    <p className="text-sm text-muted-foreground">Completed!</p>
                     <p className="text-2xl font-bold">{completedCount}</p>
                   </div>
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="h-6 w-6 text-green-600" />
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                    <ThumbsUp className="h-6 w-6 text-accent-foreground" />
                   </div>
                 </div>
               </div>
@@ -105,11 +105,11 @@ export default function Dashboard() {
               <div className="bg-card p-6 rounded-lg border">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Remaining</p>
+                    <p className="text-sm text-muted-foreground">Let's Do This!</p>
                     <p className="text-2xl font-bold">{totalCount - completedCount}</p>
                   </div>
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Plus className="h-6 w-6 text-orange-600" />
+                  <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center">
+                    <Sun className="h-6 w-6 text-secondary-foreground" />
                   </div>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function Dashboard() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <CheckCircle className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                  <Sparkles className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
                   <h3 className="text-lg font-medium mb-2">
                     {filter === "completed" ? "No completed tasks yet" :
                      filter === "active" ? "No active tasks" :

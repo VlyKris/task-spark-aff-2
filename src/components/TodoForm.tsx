@@ -78,34 +78,34 @@ export function TodoForm({ trigger }: TodoFormProps) {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button className="gap-2">
               <Plus className="h-4 w-4" />
-              Add Todo
+              Add a Happy Task
             </Button>
           </motion.div>
         )}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <DialogTitle>Create New Todo</DialogTitle>
+          <DialogTitle>Add a New Happy Task</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="title">Title</Label>
+            <Label htmlFor="title">Task</Label>
             <Input
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="What needs to be done?"
+              placeholder="What wonderful thing will you do?"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="description">Description</Label>
+            <Label htmlFor="description">A few more details?</Label>
             <Textarea
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Add more details..."
+              placeholder="Add some notes to help you..."
               rows={3}
             />
           </div>

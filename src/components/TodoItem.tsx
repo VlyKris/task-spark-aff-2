@@ -51,9 +51,15 @@ export function TodoItem({ todo }: TodoItemProps) {
   const handleToggle = async () => {
     try {
       await toggleTodo({ id: todo._id });
-      toast.success(todo.completed ? "Todo marked as incomplete" : "Todo completed!");
+      if (!todo.completed) {
+        toast.success("You did it! Great job!", {
+          icon: "🎉",
+        });
+      } else {
+        toast.info("Task moved back to active.");
+      }
     } catch (error) {
-      toast.error("Failed to update todo");
+      toast.error("Something went wrong!");
     }
   };
 
@@ -91,9 +97,9 @@ export function TodoItem({ todo }: TodoItemProps) {
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case "high": return "bg-red-100 text-red-800 border-red-200";
-      case "medium": return "bg-yellow-100 text-yellow-800 border-yellow-200";
-      case "low": return "bg-green-100 text-green-800 border-green-200";
+      case "high": return "bg-primary/10 text-primary-foreground border-primary/20";
+      case "medium": return "bg-secondary/20 text-secondary-foreground border-secondary/30";
+      case "low": return "bg-accent/20 text-accent-foreground border-accent/30";
       default: return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };

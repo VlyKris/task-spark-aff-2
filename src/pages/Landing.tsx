@@ -1,11 +1,11 @@
 import { AuthButton } from "@/components/auth/AuthButton";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Sparkles, Smile, Heart, Sun } from "lucide-react";
+import { Sparkles, Smile, Heart, Sun, Waves } from "lucide-react";
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
+    <div className="min-h-screen animate-kaleidoscope">
       {/* Navigation */}
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
@@ -14,8 +14,10 @@ export default function Landing() {
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sparkles className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">HappyList</span>
+            <motion.div animate={{ rotate: 360, scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 4 }}>
+              <Waves className="h-8 w-8 text-primary" />
+            </motion.div>
+            <span className="text-xl font-bold">TodoTrip</span>
           </div>
           <AuthButton />
         </div>
@@ -30,12 +32,18 @@ export default function Landing() {
           className="text-center max-w-4xl mx-auto"
         >
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Turn Your Todos
-            <span className="text-primary block">into To-das!</span>
+            Expand Your Mind
+            <motion.span 
+              className="text-primary block"
+              animate={{ color: ["oklch(var(--primary))", "oklch(var(--secondary))", "oklch(var(--accent))", "oklch(var(--primary))"] }}
+              transition={{ repeat: Infinity, duration: 5 }}
+            >
+              and Your To-Do List
+            </motion.span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            A cheerful, intuitive todo app that makes productivity a joy. 
-            Conquer your tasks with a smile and celebrate your progress.
+            Journey through your tasks on a wave of cosmic energy. 
+            Manifest your goals. Vibe with your productivity.
           </p>
           
           <motion.div
@@ -47,12 +55,12 @@ export default function Landing() {
             <AuthButton 
               trigger={
                 <Button size="lg" className="text-lg px-8 py-6">
-                  Start Your Happy List
+                  Start the Trip
                 </Button>
               }
             />
             <Button variant="secondary" size="lg" className="text-lg px-8 py-6">
-              See the Magic ✨
+              Explore the Void ✨
             </Button>
           </motion.div>
         </motion.div>
@@ -104,7 +112,7 @@ export default function Landing() {
         className="border-t mt-24 py-8"
       >
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2024 HappyList. Made with ❤️ to make you smile.</p>
+          <p>&copy; 2024 TodoTrip. Ride the wave.</p>
         </div>
       </motion.footer>
     </div>

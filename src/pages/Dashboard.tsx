@@ -43,7 +43,7 @@ export default function Dashboard() {
 
   return (
     <Protected>
-      <div className="min-h-screen bg-gradient-to-br from-background via-secondary/10 to-background">
+      <div className="min-h-screen animate-kaleidoscope">
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
@@ -53,11 +53,13 @@ export default function Dashboard() {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Sparkles className="h-8 w-8 text-primary" />
+                <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 5, ease: "linear" }}>
+                  <Sparkles className="h-8 w-8 text-primary" />
+                </motion.div>
                 <div>
-                  <h1 className="text-2xl font-bold">Your Sunshine List</h1>
+                  <h1 className="text-2xl font-bold">Cosmic Checklist</h1>
                   <p className="text-sm text-muted-foreground">
-                    Hello, {user?.name || "Sunshine"}! Let's make today amazing.
+                    Greetings, {user?.name || "Stardust"}! Let's manifest reality.
                   </p>
                 </div>
               </div>

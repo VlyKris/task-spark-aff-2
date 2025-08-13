@@ -97,22 +97,20 @@ export function TodoItem({ todo }: TodoItemProps) {
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case "high": return "bg-primary/10 text-primary-foreground border-primary/20";
-      case "medium": return "bg-secondary/20 text-secondary-foreground border-secondary/30";
-      case "low": return "bg-accent/20 text-accent-foreground border-accent/30";
+      case "high": return "bg-primary/20 text-primary-foreground border-primary/30 shadow-[0_0_15px_oklch(var(--primary)/0.5)]";
+      case "medium": return "bg-secondary/20 text-secondary-foreground border-secondary/30 shadow-[0_0_15px_oklch(var(--secondary)/0.5)]";
+      case "low": return "bg-accent/20 text-accent-foreground border-accent/30 shadow-[0_0_15px_oklch(var(--accent)/0.5)]";
       default: return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
+      whileHover={{ scale: 1.03, rotate: 0.5 }}
       className={cn(
-        "group p-4 rounded-lg border bg-card transition-all duration-200",
-        "hover:shadow-sm hover:border-primary/20",
-        todo.completed && "opacity-60"
+        "group p-4 rounded-lg border bg-card/80 backdrop-blur-sm transition-all duration-200",
+        "hover:shadow-xl",
+        todo.completed && "opacity-50 blur-[1px]"
       )}
     >
       <div className="flex items-start gap-3">

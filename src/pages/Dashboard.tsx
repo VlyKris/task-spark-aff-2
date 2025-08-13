@@ -55,9 +55,9 @@ export default function Dashboard() {
               <div className="flex items-center gap-3">
                 <Sparkles className="h-8 w-8 text-primary" />
                 <div>
-                  <h1 className="text-2xl font-bold">HappyList</h1>
+                  <h1 className="text-2xl font-bold">Your Sunshine List</h1>
                   <p className="text-sm text-muted-foreground">
-                    Let's make today amazing, {user?.name || "friend"}!
+                    Hello, {user?.name || "Sunshine"}! Let's make today amazing.
                   </p>
                 </div>
               </div>

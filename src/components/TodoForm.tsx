@@ -94,7 +94,7 @@ export function TodoForm({ trigger }: TodoFormProps) {
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="What wonderful thing will you do?"
+              placeholder="e.g., Plan a picnic in the park 🧺"
               required
             />
           </div>

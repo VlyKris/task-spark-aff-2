@@ -52,11 +52,11 @@ export function TodoItem({ todo }: TodoItemProps) {
     try {
       await toggleTodo({ id: todo._id });
       if (!todo.completed) {
-        toast.success("You did it! Great job!", {
-          icon: "🎉",
+        toast.success("Woohoo! Another task conquered!", {
+          icon: "🚀",
         });
       } else {
-        toast.info("Task moved back to active.");
+        toast.info("No worries! It's back on the list.");
       }
     } catch (error) {
       toast.error("Something went wrong!");

@@ -52,7 +52,7 @@ export default function Landing() {
               }
             />
             <Button variant="secondary" size="lg" className="text-lg px-8 py-6">
-              Learn More
+              See the Magic ✨
             </Button>
           </motion.div>
         </motion.div>
